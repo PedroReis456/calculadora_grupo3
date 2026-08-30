@@ -12,4 +12,5 @@ def main():
     print("Todos os testes passaram com sucesso!")
     return
 
-print(main())
+if __name__ == "__main__":
+    main()
