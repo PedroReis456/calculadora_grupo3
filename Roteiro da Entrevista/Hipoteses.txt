@@ -1,0 +1,24 @@
+Hipóteses sobre o problema
+H1: Uma parcela significativa dos alunos enfrenta dificuldades ou imprevistos no trajeto até a faculdade.
+H2: O tempo de deslocamento até a faculdade é considerado relevante pelos alunos.
+H3: O custo de transporte representa um gasto significativo para parte dos alunos.
+H4: Os alunos que enfrentam problemas frequentes no trajeto demonstram maior interesse em alternativas de transporte.
+Hipóteses sobre caronas
+H5: Alunos da faculdade já utilizam caronas como alternativa de transporte.
+H6: As caronas existentes são principalmente combinadas por meio de contatos pessoais ou grupos informais.
+H7: Existe demanda por caronas entre pessoas que não possuem uma relação de amizade prévia.
+H8: A falta de conhecimento pessoal entre motorista e passageiro é uma das principais barreiras para utilizar caronas.
+H9: Os alunos estariam mais dispostos a aceitar caronas de desconhecidos se houvesse algum mecanismo de segurança ou identificação.
+H10: A possibilidade de dividir os custos da viagem aumenta a disposição dos alunos em utilizar caronas.
+H11: Os alunos consideram aceitável pagar ou contribuir financeiramente para uma carona.
+H12: O valor cobrado atualmente pelas caronas varia de acordo com o trajeto e os custos envolvidos.
+Hipóteses sobre motoristas
+H13: Uma parcela relevante dos alunos que possui carro costuma ter lugares vazios durante o trajeto até a faculdade.
+H14: Alunos que possuem lugares disponíveis no carro estão dispostos a oferecer carona.
+H15: A disposição para oferecer carona aumenta quando o passageiro contribui com os custos de combustível.
+H16: Motoristas têm maior resistência em oferecer carona para pessoas que não conhecem.
+H17: A confiança no passageiro é um fator importante para a decisão de oferecer uma carona.
+Hipóteses sobre a solução
+H18: Alunos demonstram interesse em conhecer pessoas que fazem trajetos semelhantes aos seus.
+H19: Receber o contato de alguém que realiza um trajeto semelhante seria suficiente para uma parcela dos alunos iniciar uma conversa sobre carona.
+H20: Existe interesse em estabelecer caronas recorrentes entre alunos que fazem trajetos semelhantes, e não apenas em combinar viagens isoladas.
