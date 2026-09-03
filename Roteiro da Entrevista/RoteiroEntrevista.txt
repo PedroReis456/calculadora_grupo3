@@ -1,18 +1,31 @@
-Bloco 1 — Rotina real (50s)
-Como você veio pra faculdade hoje? Como foi seu trajeto porta a porta.
-Quanto tempo levou? E quanto você acha que gastou com deslocamento essa semana inteira?
-Quando foi a última vez que deu ruim nesse trajeto? O que aconteceu?
+# Entrevista — Deslocamento até a faculdade
 
-Bloco 2 — o comportamento que já existe (60s)
-Aqui você procura a gambiarra. Se as pessoas já se viram de algum jeito, existe demanda real.
-Você já pegou ou já deu carona pra vir pra cá? Como vocês combinaram isso?
-Rolou dinheiro nessa carona? Quanto e como foi pago?
-Você entraria no carro de alguém da faculdade que você não conhece pessoalmente? O que precisaria acontecer para você topar?
+### 1. Rotina de deslocamento
 
-Bloco 3 — se a pessoa tem carro (40s) — pule se ela não tiver, e dobre o Bloco 2
-Quantos lugares vazios normalmente vão no seu carro?
-Você já levou alguém que não era seu amigo? O que te fez levar — ou o que te fez não levar?
-Se um desconhecido da faculdade te pedisse carona amanhã cobrindo a gasolina, o que você responderia na hora?
+1. Como você veio para a faculdade hoje? Pode descrever seu trajeto desde a sua casa até aqui?
 
-Fechamento (15s)
-Se eu te mandasse hoje o contato de alguém que faz o mesmo trajeto que você, você chamaria essa pessoa?
+2. Quanto tempo, aproximadamente, você levou nesse trajeto?
+
+3. Considerando toda a semana, quanto você estima que gastou com deslocamento até a faculdade?
+
+4. Quando foi a última vez que você teve algum problema ou imprevisto durante esse trajeto? O que aconteceu?
+
+### 2. Uso atual de caronas
+
+5. Você já pegou ou ofereceu carona para alguém da faculdade? Como vocês combinaram?
+
+6. Quando houve pagamento pela carona, como isso foi combinado? Quanto foi pago, aproximadamente, e de que forma?
+
+7. Você aceitaria pegar carona com alguém da faculdade que não conhece pessoalmente? O que precisaria acontecer para você se sentir confortável em aceitar?
+
+### 3. Para quem possui carro
+
+8. Normalmente, quantos lugares ficam disponíveis no seu carro durante o trajeto até a faculdade?
+
+9. Você já deu carona para alguém que não era seu amigo ou conhecido próximo? O que fez você aceitar ou recusar?
+
+10. Se alguém da faculdade que você não conhece pedisse uma carona amanhã e se oferecesse para dividir os custos da gasolina, qual seria sua reação?
+
+### 4. Encerramento
+
+11. Se você recebesse hoje o contato de uma pessoa da faculdade que faz um trajeto semelhante ao seu, você entraria em contato com ela para combinar uma carona? Por quê?
