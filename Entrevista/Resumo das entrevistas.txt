@@ -1,6 +1,21 @@
-Gabriel Diogo 
-Utiliza carro próprio, levando cerca de vinte minutos para chegar ao campus e raramente enfrentando imprevistos no trânsito.
-Embora possua quatro assentos livres, ele geralmente oferece transporte apenas para pessoas conhecidas e nunca cobrou por esse 
-serviço. Gabriel demonstra interesse em compartilhar viagens com desconhecidos da faculdade caso houvesse um grupo oficial de 
-caronas ou se os horários coincidirem. O diálogo revela, portanto, as preferências e condições sob as quais o aluno aceitaria 
-participar de um sistema de transporte compartilhado.
+Resumo Integrado das Entrevistas (Análise Conjunta)
+A análise conjunta das oito entrevistas revela padrões claros e desafios compartilhados na rotina de deslocamento dos estudantes da PUC:
+A Discrepância dos Modais e Tempos de Viagem: Existe uma divisão nítida entre os estudantes que utilizam carro próprio e os que dependem de transporte público. Enquanto os motoristas (como Gabriel e Ana Luiza) têm trajetos rápidos de 15 a 40 minutos
+, os usuários de transporte público enfrentam rotinas exaustivas. Isabela e César, por exemplo, chegam a gastar até 2 horas de viagem
+. O trânsito urbano (especialmente saindo da Barra da Tijuca) é uma queixa unânime que afeta a previsibilidade de todos
+.
+O Impacto dos Imprevistos: O trânsito pesado é rotineiro, mas os dias de chuva surgem como o pior cenário para quem depende de ônibus. Bruna e Thiago relatam longas e desconfortáveis esperas debaixo de chuva por transportes que atrasam
+, enquanto César destaca que o trânsito dobrado nesses dias gera atrasos frequentes e risco real de reprovação por faltas
+.
+Caráter Informal e Gratuito das Caronas Atuais: O compartilhamento de viagens hoje é estritamente informal e limitado a amigos próximos ou professores
+. Em quase nenhum caso há dinheiro envolvido
+, com exceção de Bruna, que insistiu em realizar transferências via Pix de R$ 15 para ajudar um amigo próximo a rachar a gasolina
+. Além disso, os motoristas revelam que costumam rodar com o carro vazio, mantendo quase sempre 4 vagas ociosas
+.
+A Questão de Gênero na Segurança: Há um contraste muito forte na percepção de segurança para caronas com desconhecidos. As estudantes mulheres (Ana Luiza, Clara e Bruna) expressam grande receio e desconforto em aceitar carona de homens desconhecidos
+. Elas afirmam que só se sentiriam seguras se a motorista fosse outra mulher, se houvesse mais mulheres no veículo ou se fosse uma indicação de amigos próximos
+. Por outro lado, os estudantes homens (César, Pedro e Gabriel) mostram-se muito mais abertos a aceitar ou oferecer carona para desconhecidos, contanto que o trajeto seja compatível
+.
+Demanda por Validação e Tecnologia institucional: Há um consenso sobre a necessidade de mecanismos de validação para viabilizar as caronas com segurança. Os entrevistados sugerem que a existência de um aplicativo de caronas, grupos oficiais da faculdade ou um sistema de verificação institucional (que garanta que a pessoa é confiável e pertence à comunidade acadêmica) seria um divisor de águas
+. Essa ferramenta otimizaria o tempo de deslocamento dos estudantes, reduziria custos e mitigaria os atrasos na rotina acadêmica
+.
