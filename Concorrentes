@@ -1,0 +1,43 @@
+Concorrentes
+
+Existem diversos concorrentes, porém alguns são concorrentes diretos, ou seja, mais parecidos com
+a nossa proposta:
+BlaBlaCar
+Um aplicativo de motoristas e passageiros que compartilham o mesmo trajeto. O carro é do próprio 
+motorista e o passageiro reserva o seu lugar um tempo antes da viajem, assim, há uma quantidade de
+vagas dentro de um veículo e os que reservam não precisam se conhecer. O caminho de quem dirige é
+fixo, ou seja, uma carona de verdade para os outros. As viajens constumam ser longas, com uma média
+de 5h e 44min por viajem. Tanto o motorista quanto o passageiro podem ser avaliados com estrelas e
+comentários e para usar o aplicativo, é necessário a validação do usuário com identidade, telefone 
+e email. É possível definir antes se prefere uma viajem com conversa ou mais silenciosa, se deseja
+ouvir música e outras preferências. Além disso, o aplicativo oferece também caronas exclusivas para
+mulheres. O preço é apenas para pagar os custos do transporte e não há lucro para o aplicativo e
+o pagamento pode ser feito tanto no app antes quanto na hora.
+
+Waze Carpool
+Esse aplicativo não está mais funcionando, mas vale falar já que era um aplicativo de carona também.
+O Waze usava os dados de pessoas que queriam chegar em algum lugar específico e conectava com os
+motoristas que estavam a caminho do destino. O pagamento era realizado no Waze Carpool e era apenas
+para cobrir os gastos do trajeto. O preço era calculado pelo app. O passageiro marcava os pontos certos
+horas ou dias antes. Parou de funcionar por baixa demanda na pandemia.
+
+Existem também os concorrentes um pouco menos parecidos com a ideia proposta, mas ainda são bastante
+importantes para considerar:
+Uber
+É uma plataforma que opera conforme a demanda, que é extremamente alta e constante durante maior parte
+do dia. Como uma líder global no ramo, está sempre buscando expandir sua funcionalidade, assim surge
+o uber eats, uber flash, uber pet, e vários outros. A dinâmica exige que o app tenha uma boa otimização 
+do tempo de espera. Encontrar um motorista no Uber é rápido e o algoritmo escolhe aquele que cumpre os 
+requerimentos de distância do passageiro, avaliação geral do motorista e viajens totais realizadas. O
+preço na plataforma varia rapidamente com a demanda e com a oferta, sendo que o app consegue prever onde
+vai ter maior demanda e envia motoristas para a área. Com o peso de vários usuários no app ao mesmo tempo,
+o maior problema técnico é a de atualizar em tempo real a localização de cada um. A segurança se baseia 
+na avaliação do motorista, identificação de cada um envolvido, código para a viajem, e gps que percebe
+mudança no trajeto.
+
+99
+É outra plataforma com bastante demanda. A diferença entre o Uber e 99 é que esse aplicativo funciona 
+de uma forma mais voltada para o local, ou seja para a dinâmica das cidadedes brasileiras. Mesmo em lugares
+de risco ou com menor demanda, o app busca garantir viajens. O pagamento é mais livre, além de poder 
+negociar o preço, há também a forma de pagamento via pix, cartão de transporte, 99pay, e outras. A segurança
+se baseia em contato com centrais de segurança, suporte humano e comunicação com a polícia. 
