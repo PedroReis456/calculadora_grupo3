@@ -1,0 +1,49 @@
+Hipóteses sobre o problema 
+
+H1: Uma parcela significativa dos alunos enfrenta dificuldades ou imprevistos no trajeto até a faculdade. -> [Confirmada] Os relatos apontam com frequência para atrasos consideráveis de transporte público (ônibus) e trânsito intenso devido a acidentes na via. 
+
+H2: O tempo de deslocamento até a faculdade é considerado relevante pelos alunos. -> [Confirmada] Os alunos têm plena consciência do impacto do trajeto, mensurando gastos de 15 a 20 horas semanais e baseando suas escolhas de transporte nesse fator. 
+
+H3: O custo de transporte representa um gasto significativo para parte dos alunos. -> [Inconclusiva] Embora o custo seja considerado, há indícios de que os alunos veem o transporte público (como o metrô) como uma alternativa financeiramente mais barata do que arcar com custos de combustível em um carro parado no trânsito. 
+
+H4: Os alunos que enfrentam problemas frequentes no trajeto demonstram maior interesse em alternativas de transporte. -> [Parcialmente Validada] Enquanto estudantes com trajetos mais longos e exaustivos demonstram alta adesão à ideia, outros preferem enfrentar atrasos no transporte público a usar carro, avaliando que veículos de passeio sofrem mais com engarrafamentos. 
+
+Hipóteses sobre caronas 
+
+H5: Alunos da faculdade já utilizam caronas como alternativa de transporte. -> [Confirmada] A prática de pegar carona já faz parte da rotina universitária observada. 
+
+H6: As caronas existentes são principalmente combinadas por meio de contatos pessoais ou grupos informais. -> [Confirmada] As dinâmicas atuais ocorrem de forma espontânea, seja presencialmente no campus com conhecidos ou via WhatsApp com familiares. 
+
+H7: Existe demanda por caronas entre pessoas que não possuem uma relação de amizade prévia. -> [Parcialmente Validada] Há uma polarização: parte do público se mostra aberta à possibilidade (desde que existam garantias), enquanto outra parte possui receios. 
+
+H8: A falta de conhecimento pessoal entre motorista e passageiro é uma das principais barreiras para utilizar caronas. -> [Parcialmente] A ausência de intimidade ou familiaridade com o motorista é apontada como um bloqueio que pode ser contornado de alguma. 
+
+H9: Os alunos estariam mais dispostos a aceitar caronas de desconhecidos se houvesse algum mecanismo de segurança ou identificação. -> [Confirmada] Funcionalidades como compartilhamento de localização ou a "validação social" proveniente de grupos acadêmicos preexistentes são exigências claras para gerar confiança. 
+
+H10: A possibilidade de dividir os custos da viagem aumenta a disposição dos alunos em utilizar caronas. -> [Parcialmente] Os dados levantados apontam para uma preocupação de que o rateio torne o percurso mais caro do que a tarifa do transporte público. 
+
+H11: Os alunos consideram aceitável pagar ou contribuir financeiramente para uma carona. -> [Inconclusiva] As caronas mapeadas nas rotinas ocorrem no formato de cortesia/gratuidade, sem cobranças. 
+
+H12: O valor cobrado atualmente pelas caronas varia de acordo com o trajeto e os custos envolvidos. -> [Inconclusiva]  
+
+Hipóteses sobre motoristas 
+
+H13: Uma parcela relevante dos alunos que possui carro costuma ter lugares vazios durante o trajeto até a faculdade. -> [Confirmada]  
+
+H14: Alunos que possuem lugares disponíveis no carro estão dispostos a oferecer carona. -> [Parcialmente] 
+
+H15: A disposição para oferecer carona aumenta quando o passageiro contribui com os custos de combustível. -> [Confirmada] 
+
+H16: Motoristas têm maior resistência em oferecer carona para pessoas que não conhecem. -> [Confirmada] 
+
+H17: A confiança no passageiro é um fator importante para a decisão de oferecer uma carona. -> [Confirmada] 
+
+Hipóteses sobre a solução 
+
+H18: Alunos demonstram interesse em conhecer pessoas que fazem trajetos semelhantes aos seus. -> [Parcialmente Validada] Há interesse em parte do público para facilitar o deslocamento, mas outros simplesmente ignorariam essa conveniência se não considerarem o carro financeiramente e logisticamente vantajoso. 
+
+H19: Receber o contato de alguém que realiza um trajeto semelhante seria suficiente para uma parcela dos alunos iniciar uma conversa sobre carona. -> [Parcialmente Validada] Observa-se que uma parcela proativa dos alunos iniciaria o contato para otimizar o tempo de deslocamento; entretanto, isso não é uma regra geral. 
+
+H20: Existe interesse em estabelecer caronas recorrentes entre alunos que fazem trajetos semelhantes, e não apenas em combinar viagens isoladas. -> [Paricalmente Validade] As entrevistas apontam tanto para caronas recorrentes quanto para viagens isoladas. 
+
+ 
