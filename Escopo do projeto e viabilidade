@@ -1,0 +1,22 @@
+Os entregáveis do projeto:
+Um protótipo de software, um apicativo web capaz de reproduzir por completo a ideia pensada que é a de compartilhar o seu carro ou pegar uma carona
+em trajetos que todos os envolvidos tenham como destino final a universidade, a PUC.
+Uma interface gráfica que deixe claro a finalidade do software, facilite a navegação e tenha uma estética limpa e agradável.
+Um repositório no qual estão contidos todos os dados pesquisados, desenvolvidos, etapas do trabalho, ideias e programas.
+Um banco de dados contruído por modelagem de dados.
+
+
+A metodologia:
+Seguindo um padrão de metodologias agéis e aplicado a engenharia, toda semana ocorre uma reunião da Sprint na qual são definidas as tarefas e as separamos
+entre os membros do grupo.
+A avaliação é feita por meio da presença nas reuniões e no equilíbrio feito pelo integrante na escolha da quantidade de tarefas e suas dificuldades, ou 
+seja, o tempo gasto em sua realização.
+A metodologia em si é chamada de Problem Based learning (PBL) ou aprendizagem baseada em problemas e tem como princípio incentivar o crescimento pessoal
+e a pró-atividade
+Separamos as etapas do projeto, além das Sprints semanais, o acompanhamento de cada tarefa em seu progresso, indo de product backlog para sprint backlog,
+depois para em andamento, em revisão e por fim validadas na Sprint.
+
+
+Viabilidade:
+O projeto demanda bastante tempo mas não orçamento. Com uma metodologia bem estabelecida, a organização torna todo o desenvolvimento mais simples e viável.
+As ferramentas utilizadas são diversas, desde repositórios como o GitHub, conhecimento sobre python e outras linguagens até IAs para gerar interfaces, e outras. 
