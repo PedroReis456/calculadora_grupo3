@@ -20,3 +20,8 @@ depois para em andamento, em revisão e por fim validadas na Sprint.
 Viabilidade:
 O projeto demanda bastante tempo mas não orçamento. Com uma metodologia bem estabelecida, a organização torna todo o desenvolvimento mais simples e viável.
 As ferramentas utilizadas são diversas, desde repositórios como o GitHub, conhecimento sobre python e outras linguagens até IAs para gerar interfaces, e outras. 
+Como uma ferramenta pensada para facilitar o transporte de alunos da Puc-Rio, é esperado uma demanda significativa para o projeto através de entrevistas com
+um grupo de pessoas que fazem parte do conjunto de estudantes da universidade e da própria experiência dentro da Puc. Seguindo o cronograma das Sprints, devemos
+concluir o trabalho sem atrasos. Sobre possíveis problemas que podem ocorrer durante esse tempo como uma ferramenta para realizar alguma tarefa não estar 
+sendo útil o suficiente ou a ideia não está da forma como planejamos, devemos ser capazes de improvisar, procurando outra maneira de terminar a tarefa ou fazer
+mudanças na própria ideia inicial.
