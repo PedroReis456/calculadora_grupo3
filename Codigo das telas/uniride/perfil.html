@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniRide - Perfil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="cabecalho-azul">
+      <div class="cabecalho-linha">
+        <h1>Perfil</h1>
+        <img class="logo-pequeno" src="img/logo-branco.png" alt="UniRide">
+      </div>
+    </header>
+
+    <main>
+      <!-- Cartão com nome e curso -->
+      <section class="cartao cartao-usuario">
+        <div class="avatar">BS</div>
+        <div>
+          <h2>Bernardo S.</h2>
+          <p>Engenharia de Computação</p>
+          <p class="universidade">PUC-Rio</p>
+        </div>
+      </section>
+
+      <!-- Números -->
+      <section class="perfil-estatisticas" aria-label="Seus números">
+        <div class="cartao estatistica">
+          <strong><span class="estrela">★</span> 4.9</strong>
+          <small>Avaliação</small>
+        </div>
+        <div class="cartao estatistica">
+          <strong class="azul">23</strong>
+          <small>Caronas realizadas</small>
+        </div>
+      </section>
+
+      <!-- Dados da conta -->
+      <dl class="cartao lista-dados">
+        <div>
+          <dt>E-mail</dt>
+          <dd>bernardo@puc-rio.br</dd>
+        </div>
+        <div>
+          <dt>Membro desde</dt>
+          <dd>Março 2024</dd>
+        </div>
+        <div>
+          <dt>Trajeto principal</dt>
+          <dd>Botafogo → PUC-Rio</dd>
+        </div>
+      </dl>
+
+      <div class="perfil-botoes">
+        <a href="#" class="botao botao-contorno">Editar perfil</a>
+        <a href="login.html" class="botao botao-cinza">Sair</a>
+      </div>
+    </main>
+
+    <!-- Menu inferior -->
+    <nav class="menu-inferior" aria-label="Menu principal">
+      <a href="inicio.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        Início
+      </a>
+      <a href="minhas-caronas.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Caronas
+      </a>
+      <a href="perfil.html" class="ativo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Perfil
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>

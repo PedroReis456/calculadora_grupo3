@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniRide - Entrar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="app tela-login">
+
+    <!-- Parte azul de cima: logo e slogan -->
+    <header class="login-topo">
+      <div class="login-logo-caixa">
+        <img src="img/logo.png" alt="UniRide">
+      </div>
+      <p>Conectando estudantes universitários</p>
+    </header>
+
+    <!-- Painel branco com o formulário -->
+    <main class="login-painel">
+      <nav class="abas" aria-label="Entrar ou criar conta">
+        <a href="login.html" class="ativa">Entrar</a>
+        <a href="#">Criar conta</a>
+      </nav>
+
+      <form action="inicio.html">
+        <div class="campo">
+          <label class="rotulo" for="email">E-mail institucional</label>
+          <input type="email" id="email" name="email" placeholder="seu.nome@puc-rio.br" required>
+        </div>
+
+        <div class="campo">
+          <label class="rotulo" for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="botao botao-azul">Entrar</button>
+      </form>
+
+      <p class="login-recuperar">Esqueceu sua senha? <a href="#">Recuperar</a></p>
+    </main>
+
+  </div>
+</body>
+</html>

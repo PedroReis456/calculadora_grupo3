@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniRide - Meu trajeto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="app" style="padding-bottom: 0;">
+
+    <header class="cabecalho-branco">
+      <a href="inicio.html" class="botao-voltar" aria-label="Voltar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      </a>
+      <h1>Meu trajeto</h1>
+    </header>
+
+    <!--
+      Esta tela serve para os dois tipos de usuário:
+      - "Procurar carona" (passageiro): não mostra o campo de vagas
+      - "Oferecer carona" (motorista): mostra o campo "Vagas disponíveis"
+      A troca é feita só com CSS, usando os dois botões de rádio abaixo.
+      IMPORTANTE: os rádios precisam ficar ANTES dos grupos, como irmãos, para o CSS funcionar.
+    -->
+    <form class="form-trajeto" action="inicio.html">
+
+      <input class="radio-escondido" type="radio" name="tipo" id="procurar" value="procurar">
+      <input class="radio-escondido" type="radio" name="tipo" id="oferecer" value="oferecer" checked>
+
+      <div class="grupo grupo-tipo">
+        <span class="rotulo">Você quer</span>
+        <div class="escolha-tipo">
+          <label class="opcao" for="procurar"><span class="emoji">🙋</span> Procurar carona</label>
+          <label class="opcao" for="oferecer"><span class="emoji">🚗</span> Oferecer carona</label>
+        </div>
+      </div>
+
+      <div class="grupo">
+        <label class="rotulo" for="origem">Origem</label>
+        <div class="input-icone">
+          <span aria-hidden="true">📍</span>
+          <input type="text" id="origem" name="origem" value="Botafogo">
+        </div>
+      </div>
+
+      <div class="grupo">
+        <label class="rotulo" for="destino">Destino</label>
+        <div class="input-icone">
+          <span aria-hidden="true">🎓</span>
+          <input type="text" id="destino" name="destino" value="PUC-Rio">
+        </div>
+      </div>
+
+      <div class="grupo">
+        <span class="rotulo">Dias da semana</span>
+        <div class="dias-semana">
+          <label><input type="checkbox" name="dias" value="dom"><span>Dom</span></label>
+          <label><input type="checkbox" name="dias" value="seg" checked><span>Seg</span></label>
+          <label><input type="checkbox" name="dias" value="ter" checked><span>Ter</span></label>
+          <label><input type="checkbox" name="dias" value="qua" checked><span>Qua</span></label>
+          <label><input type="checkbox" name="dias" value="qui" checked><span>Qui</span></label>
+          <label><input type="checkbox" name="dias" value="sex" checked><span>Sex</span></label>
+          <label><input type="checkbox" name="dias" value="sab"><span>Sáb</span></label>
+        </div>
+      </div>
+
+      <div class="grupo">
+        <label class="rotulo" for="horario">Horário de saída</label>
+        <div class="input-icone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <input type="time" id="horario" name="horario" value="07:20">
+        </div>
+      </div>
+
+      <!-- Só aparece para quem escolheu "Oferecer carona" -->
+      <div class="grupo grupo-vagas">
+        <span class="rotulo">Vagas disponíveis</span>
+        <div class="vagas">
+          <label><input type="radio" name="vagas" value="1"><span>1</span></label>
+          <label><input type="radio" name="vagas" value="2" checked><span>2</span></label>
+          <label><input type="radio" name="vagas" value="3"><span>3</span></label>
+          <label><input type="radio" name="vagas" value="4"><span>4</span></label>
+        </div>
+      </div>
+
+      <button type="submit" class="botao botao-azul">Salvar trajeto</button>
+    </form>
+
+  </div>
+</body>
+</html>

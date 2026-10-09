@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniRide - Minhas caronas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="cabecalho-branco">
+      <h1>Minhas caronas</h1>
+    </header>
+
+    <main class="conteudo">
+
+      <!-- Caronas ativas -->
+      <h2 class="rotulo secao-titulo">Caronas ativas</h2>
+
+      <article class="cartao carona-ativa">
+        <div class="info">
+          <span class="status-ativo">Carona ativa</span>
+          <div class="carona-ativa-linha">
+            <div class="avatar azul-medio">AN</div>
+            <div>
+              <h2>Ana</h2>
+              <p>Botafogo → PUC-Rio</p>
+              <div class="chips-dias">
+                <span class="chip-cinza">Seg</span>
+                <span class="chip-cinza">Qua</span>
+                <span class="chip-cinza">Sex</span>
+                <span class="hora-pequena">· 07:20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="botao-detalhes">Detalhes</button>
+      </article>
+
+      <!-- Solicitações recebidas -->
+      <h2 class="rotulo secao-titulo">Solicitações recebidas</h2>
+
+      <article class="cartao solicitacao">
+        <div class="solicitacao-topo">
+          <div class="avatar azul-claro">JO</div>
+          <div>
+            <h2>João <span>★ 4.6</span></h2>
+            <p>João quer entrar na sua carona.</p>
+          </div>
+        </div>
+        <div class="solicitacao-botoes">
+          <button type="button" class="botao botao-cinza">Recusar</button>
+          <button type="button" class="botao botao-azul">Aceitar</button>
+        </div>
+      </article>
+
+      <article class="cartao solicitacao">
+        <div class="solicitacao-topo">
+          <div class="avatar amarelo">SO</div>
+          <div>
+            <h2>Sofia <span>★ 4.9</span></h2>
+            <p>Sofia quer entrar na sua carona.</p>
+          </div>
+        </div>
+        <div class="solicitacao-botoes">
+          <button type="button" class="botao botao-cinza">Recusar</button>
+          <button type="button" class="botao botao-azul">Aceitar</button>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Menu inferior -->
+    <nav class="menu-inferior" aria-label="Menu principal">
+      <a href="inicio.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        Início
+      </a>
+      <a href="minhas-caronas.html" class="ativo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Caronas
+      </a>
+      <a href="perfil.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Perfil
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>

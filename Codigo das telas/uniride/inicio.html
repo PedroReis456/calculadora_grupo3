@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniRide - Início</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Cabeçalho azul com logo, sino e saudação -->
+    <header class="cabecalho-azul saudacao">
+      <div class="cabecalho-linha">
+        <img class="logo-pequeno" src="img/logo-branco.png" alt="UniRide">
+        <button class="botao-sino" type="button" aria-label="Notificações">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        </button>
+      </div>
+      <small>Bom dia 👋</small>
+      <h1>Olá, Bernardo!</h1>
+    </header>
+
+    <main>
+      <!-- Cartão com o trajeto do usuário -->
+      <section class="cartao cartao-trajeto" aria-label="Seu trajeto">
+        <div class="cartao-topo">
+          <span>Seu trajeto</span>
+          <a href="meu-trajeto.html">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+            Editar
+          </a>
+        </div>
+
+        <div class="trajeto-pontos">
+          <div class="ponto origem">
+            <small>Origem</small>
+            <strong>📍 Botafogo</strong>
+          </div>
+          <div class="ponto destino">
+            <small>Destino</small>
+            <strong>🎓 PUC-Rio</strong>
+          </div>
+        </div>
+
+        <div class="trajeto-horario">
+          <span class="hora">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            07:20
+          </span>
+          <div class="dias">
+            <span class="dia-chip">Seg</span>
+            <span class="dia-chip">Ter</span>
+            <span class="dia-chip">Qua</span>
+            <span class="dia-chip">Qui</span>
+            <span class="dia-chip">Sex</span>
+          </div>
+        </div>
+
+        <span class="selo-oferta">🚗 Ofereço carona · 2 vagas</span>
+      </section>
+
+      <a href="minhas-caronas.html" class="botao botao-azul botao-encontrar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        Encontrar caronas
+      </a>
+
+      <!-- Números do usuário -->
+      <section class="estatisticas" aria-label="Seus números">
+        <div class="cartao estatistica">
+          <strong class="azul">23</strong>
+          <small>Caronas realizadas</small>
+        </div>
+        <div class="cartao estatistica">
+          <strong><span class="estrela">★</span> 4.9</strong>
+          <small>Sua avaliação</small>
+        </div>
+      </section>
+    </main>
+
+    <!-- Menu inferior -->
+    <nav class="menu-inferior" aria-label="Menu principal">
+      <a href="inicio.html" class="ativo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        Início
+      </a>
+      <a href="minhas-caronas.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Caronas
+      </a>
+      <a href="perfil.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Perfil
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>
