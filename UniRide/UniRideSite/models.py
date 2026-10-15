@@ -110,3 +110,50 @@ class Trajeto(models.Model):
         '''
         return "Trajeto: " + self.origem + " → " + self.destino + " (" + self.aluno.nome + ")"
 
+
+class Solicitacao(models.Model):
+    '''
+    Pedido de um passageiro para entrar no trajeto oferecido por um motorista.
+    Quando o motorista aceita, a carona passa a acontecer ("Match confirmado!").
+    '''
+    PENDENTE = 'PENDENTE'
+    ACEITA = 'ACEITA'
+    RECUSADA = 'RECUSADA'
+    STATUS = [
+        (PENDENTE, 'Aguardando confirmação'),
+        (ACEITA, 'Aceita'),
+        (RECUSADA, 'Recusada'),
+    ]
+
+    id = models.AutoField(primary_key=True)
+    trajeto = models.ForeignKey(
+        Trajeto,
+        on_delete=models.CASCADE,
+        related_name='solicitacoes',
+        help_text='Trajeto oferecido pelo motorista',
+    )
+    passageiro = models.ForeignKey(
+        Aluno,
+        on_delete=models.CASCADE,
+        related_name='solicitacoes',
+        help_text='Aluno que pediu a carona',
+    )
+    status = models.CharField(max_length=8, choices=STATUS, default=PENDENTE, help_text='Situação do pedido')
+    data_criacao = models.DateTimeField(auto_now_add=True, verbose_name='Data do pedido')
+
+    class Meta:
+        managed = True
+        db_table = 'Solicitacao'
+        ordering = ['-data_criacao']
+        verbose_name = 'Solicitação'
+        verbose_name_plural = 'Solicitações'
+        constraints = [
+            # Um aluno só pode pedir uma vez para entrar no mesmo trajeto
+            models.UniqueConstraint(fields=['trajeto', 'passageiro'], name='solicitacao_unica_por_trajeto'),
+        ]
+
+    def __str__(self):
+        '''
+        Como a solicitação aparece nas listas da página de administração.
+        '''
+        return "Solicitação: " + self.passageiro.nome + " → carona de " + self.trajeto.aluno.nome
