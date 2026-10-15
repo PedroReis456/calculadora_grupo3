@@ -58,3 +58,55 @@ class Veiculo(models.Model):
         Como o veículo aparece nas listas da página de administração.
         '''
         return "Veículo: " + self.modelo + " (" + self.placa + ")"
+
+
+class Trajeto(models.Model):
+    '''
+    Trajeto cadastrado na tela "Meu trajeto".
+    O aluno escolhe se oferece ou procura carona, a origem, os dias da semana,
+    o horário de saída e, no caso de oferta, quantas vagas tem no carro.
+    '''
+    OFERECE = 'OFERECE'
+    PROCURA = 'PROCURA'
+    TIPOS = [
+        (OFERECE, 'Oferece carona'),
+        (PROCURA, 'Procura carona'),
+    ]
+
+    id = models.AutoField(primary_key=True)
+    aluno = models.ForeignKey(
+        Aluno,
+        on_delete=models.CASCADE,
+        related_name='trajetos',
+        help_text='Aluno dono do trajeto',
+    )
+    tipo = models.CharField(max_length=7, choices=TIPOS, help_text='Oferece ou procura carona')
+    origem = models.CharField(max_length=100, help_text='Bairro de partida (ex.: Botafogo)')
+    destino = models.CharField(max_length=100, default='PUC-Rio', help_text='Destino da carona')
+    horario = models.TimeField(help_text='Horário de saída no formato HH:MM', verbose_name='Horário de saída')
+    vagas = models.PositiveSmallIntegerField(
+        default=0,
+        help_text='Vagas oferecidas no carro (1 a 4). Use 0 quando o aluno procura carona.',
+    )
+    # Dias da semana em que o trajeto acontece
+    dom = models.BooleanField(default=False, verbose_name='Domingo')
+    seg = models.BooleanField(default=False, verbose_name='Segunda')
+    ter = models.BooleanField(default=False, verbose_name='Terça')
+    qua = models.BooleanField(default=False, verbose_name='Quarta')
+    qui = models.BooleanField(default=False, verbose_name='Quinta')
+    sex = models.BooleanField(default=False, verbose_name='Sexta')
+    sab = models.BooleanField(default=False, verbose_name='Sábado')
+    ativo = models.BooleanField(default=True, help_text='Desmarque para esconder o trajeto da busca')
+
+    class Meta:
+        managed = True
+        db_table = 'Trajeto'
+        ordering = ['horario']
+        verbose_name_plural = 'Trajetos'
+
+    def __str__(self):
+        '''
+        Como o trajeto aparece nas listas da página de administração.
+        '''
+        return "Trajeto: " + self.origem + " → " + self.destino + " (" + self.aluno.nome + ")"
+
