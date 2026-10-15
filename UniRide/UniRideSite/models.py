@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Cada classe abaixo vira uma TABELA no banco de dados.
 # Cada atributo da classe vira uma COLUNA da tabela.
@@ -157,3 +158,54 @@ class Solicitacao(models.Model):
         Como a solicitação aparece nas listas da página de administração.
         '''
         return "Solicitação: " + self.passageiro.nome + " → carona de " + self.trajeto.aluno.nome
+
+
+
+class Avaliacao(models.Model):
+    '''
+    Nota de 1 a 5 estrelas e comentário dados depois de uma carona.
+    Motorista e passageiro podem se avaliar mutuamente,
+    e cada um avalia no máximo uma vez por carona.
+    '''
+    id = models.AutoField(primary_key=True)
+    solicitacao = models.ForeignKey(
+        Solicitacao,
+        on_delete=models.CASCADE,
+        related_name='avaliacoes',
+        help_text='Carona (solicitação aceita) que está sendo avaliada',
+    )
+    avaliador = models.ForeignKey(
+        Aluno,
+        on_delete=models.CASCADE,
+        related_name='avaliacoes_feitas',
+        help_text='Aluno que fez a avaliação',
+    )
+    avaliado = models.ForeignKey(
+        Aluno,
+        on_delete=models.CASCADE,
+        related_name='avaliacoes_recebidas',
+        help_text='Aluno que recebeu a avaliação',
+    )
+    estrelas = models.PositiveSmallIntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)],
+        help_text='Nota de 1 a 5',
+    )
+    comentario = models.TextField(blank=True, help_text='Comentário opcional', verbose_name='Comentário')
+    data = models.DateTimeField(auto_now_add=True, verbose_name='Data da avaliação')
+
+    class Meta:
+        managed = True
+        db_table = 'Avaliacao'
+        ordering = ['-data']
+        verbose_name = 'Avaliação'
+        verbose_name_plural = 'Avaliações'
+        constraints = [
+            # Cada aluno avalia no máximo uma vez a mesma carona
+            models.UniqueConstraint(fields=['solicitacao', 'avaliador'], name='avaliacao_unica_por_carona'),
+        ]
+
+    def __str__(self):
+        '''
+        Como a avaliação aparece nas listas da página de administração.
+        '''
+        return "Avaliação: " + self.avaliador.nome + " → " + self.avaliado.nome + " (" + str(self.estrelas) + "★)"
