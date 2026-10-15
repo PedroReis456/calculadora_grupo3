@@ -18,6 +18,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from UniRideSite import views
+
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('', views.login, name='login'),
+    path('inicio/', views.home, name='home'),
+    path('trajeto/', views.cadastrar_trajeto, name='cadastrar-trajeto'),
+    path('caronas/', views.caronas_encontradas, name='caronas-encontradas'),
+    path('carona/', views.detalhes_carona, name='detalhes-carona'),
+    path('minhas-caronas/', views.minhas_caronas, name='minhas-caronas'),
+    path('perfil/', views.perfil, name='perfil'),
 ]
