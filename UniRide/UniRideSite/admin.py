@@ -1,8 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
-
-from UniRide.models import Aluno, Veiculo, Trajeto, Solicitacao, Avaliacao
+from UniRideSite.models import Aluno, Veiculo, Trajeto, Solicitacao, Avaliacao
 
 admin.site.register(Aluno)
 admin.site.register(Veiculo)

@@ -1,54 +1,32 @@
-from django.contrib.auth.models import User
-from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
-# Create your models here.
-#
-# Tabelas do UniRide, criadas a partir do modelo conceitual
-# (Planejamento/Modelo conceitual.png), ajustado para cobrir
-# os dados que as telas do protótipo já mostram:
-#
-#   Modelo conceitual        ->  Tabela
-#   Motorista + Aluno        ->  Aluno      (a mesma pessoa pode oferecer
-#                                            carona num dia e pedir no outro)
-#   Veículo                  ->  Veiculo
-#   Trajeto / Horário        ->  Trajeto    (oferta ou procura de carona)
-#   Reserva / Leva (0..4)    ->  Solicitacao
-#   Avaliação                ->  Avaliacao
+# Cada classe abaixo vira uma TABELA no banco de dados.
+# Cada atributo da classe vira uma COLUNA da tabela.
 
 
 class Aluno(models.Model):
     '''
     Estudante da PUC-Rio cadastrado no UniRide.
-    Junta as entidades Motorista e Aluno do modelo conceitual:
-    quem tem um veículo e oferece um trajeto atua como motorista,
-    quem pede para entrar numa carona atua como passageiro.
+    Quem tem carro e oferece trajeto atua como motorista;
+    quem pede carona atua como passageiro.
     '''
     id = models.AutoField(primary_key=True)
-    usuario = models.OneToOneField(
-        User,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name='aluno',
-        help_text='Usuário do Django usado no login (pode ficar vazio)',
-    )
     nome = models.CharField(max_length=100, help_text='Entre o nome completo')
     email = models.EmailField(max_length=254, unique=True, help_text='E-mail institucional (@puc-rio.br)')
     matricula = models.CharField(max_length=10, unique=True, help_text='Número de matrícula na PUC-Rio')
     curso = models.CharField(max_length=100, help_text='Curso de graduação')
-    membro_desde = models.DateField(help_text='Data de cadastro no UniRide', verbose_name='Membro desde')
+    membro_desde = models.DateField(auto_now_add=True, verbose_name='Membro desde')
 
     class Meta:
         managed = True
-        db_table = 'Aluno'                  # nome da tabela
-        ordering = ['nome']                 # ordenação default
-        verbose_name_plural = 'Alunos'      # plural de Aluno
+        db_table = 'Aluno'
+        ordering = ['nome']
+        verbose_name_plural = 'Alunos'
 
     def __str__(self):
         '''
-        Retorna a representação em string do objeto Aluno.
-        Por exemplo, o que vai ser listado na interface de admin.
+        Como o aluno aparece nas listas da página de administração.
         '''
         return "Aluno: " + self.nome
 
@@ -56,7 +34,7 @@ class Aluno(models.Model):
 class Veiculo(models.Model):
     '''
     Veículo de um aluno que oferece carona.
-    No modelo conceitual, cada motorista é proprietário de um veículo (1..1).
+    Cada aluno tem no máximo um veículo, e cada veículo pertence a um só aluno.
     '''
     id = models.AutoField(primary_key=True)
     motorista = models.OneToOneField(
@@ -78,7 +56,7 @@ class Veiculo(models.Model):
 
     def __str__(self):
         '''
-        Retorna a representação em string do objeto Veiculo.
+        Como o veículo aparece nas listas da página de administração.
         '''
         return "Veículo: " + self.modelo + " (" + self.placa + ")"
 
@@ -86,9 +64,8 @@ class Veiculo(models.Model):
 class Trajeto(models.Model):
     '''
     Trajeto cadastrado na tela "Meu trajeto".
-    O aluno escolhe se quer oferecer ou procurar carona,
-    a origem, os dias da semana, o horário de saída e,
-    no caso de oferta, quantas vagas tem no carro.
+    O aluno escolhe se oferece ou procura carona, a origem, os dias da semana,
+    o horário de saída e, no caso de oferta, quantas vagas tem no carro.
     '''
     OFERECE = 'OFERECE'
     PROCURA = 'PROCURA'
@@ -110,7 +87,6 @@ class Trajeto(models.Model):
     horario = models.TimeField(help_text='Horário de saída no formato HH:MM', verbose_name='Horário de saída')
     vagas = models.PositiveSmallIntegerField(
         default=0,
-        validators=[MaxValueValidator(4)],
         help_text='Vagas oferecidas no carro (1 a 4). Use 0 quando o aluno procura carona.',
     )
     # Dias da semana em que o trajeto acontece
@@ -129,21 +105,9 @@ class Trajeto(models.Model):
         ordering = ['horario']
         verbose_name_plural = 'Trajetos'
 
-    def dias_da_semana(self):
-        '''
-        Retorna a lista com as abreviações dos dias marcados.
-        Por exemplo: ['Seg', 'Qua', 'Sex'].
-        Útil para montar os "chips" de dias nas telas.
-        '''
-        dias = [
-            ('Dom', self.dom), ('Seg', self.seg), ('Ter', self.ter), ('Qua', self.qua),
-            ('Qui', self.qui), ('Sex', self.sex), ('Sáb', self.sab),
-        ]
-        return [nome for nome, marcado in dias if marcado]
-
     def __str__(self):
         '''
-        Retorna a representação em string do objeto Trajeto.
+        Como o trajeto aparece nas listas da página de administração.
         '''
         return "Trajeto: " + self.origem + " → " + self.destino + " (" + self.aluno.nome + ")"
 
@@ -151,7 +115,6 @@ class Trajeto(models.Model):
 class Solicitacao(models.Model):
     '''
     Pedido de um passageiro para entrar no trajeto oferecido por um motorista.
-    Representa a relação "Reserva" do modelo conceitual.
     Quando o motorista aceita, a carona passa a acontecer ("Match confirmado!").
     '''
     PENDENTE = 'PENDENTE'
@@ -192,16 +155,17 @@ class Solicitacao(models.Model):
 
     def __str__(self):
         '''
-        Retorna a representação em string do objeto Solicitacao.
+        Como a solicitação aparece nas listas da página de administração.
         '''
         return "Solicitação: " + self.passageiro.nome + " → carona de " + self.trajeto.aluno.nome
+
 
 
 class Avaliacao(models.Model):
     '''
     Nota de 1 a 5 estrelas e comentário dados depois de uma carona.
     Motorista e passageiro podem se avaliar mutuamente,
-    e cada um avalia no máximo uma vez por carona (0..1 no modelo conceitual).
+    e cada um avalia no máximo uma vez por carona.
     '''
     id = models.AutoField(primary_key=True)
     solicitacao = models.ForeignKey(
@@ -242,6 +206,6 @@ class Avaliacao(models.Model):
 
     def __str__(self):
         '''
-        Retorna a representação em string do objeto Avaliacao.
+        Como a avaliação aparece nas listas da página de administração.
         '''
         return "Avaliação: " + self.avaliador.nome + " → " + self.avaliado.nome + " (" + str(self.estrelas) + "★)"
