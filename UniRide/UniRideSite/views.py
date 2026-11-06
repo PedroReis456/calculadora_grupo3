@@ -1,6 +1,7 @@
 from django.db.models import Avg
-from django.shortcuts import get_object_or_404, render
-from UniRideSite.models import Avaliacao, Solicitacao, Trajeto
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from UniRideSite.models import Aluno, Avaliacao, Solicitacao, Trajeto
 
 
 def login(request):
@@ -41,3 +42,11 @@ def minhas_caronas(request):
 def perfil(request):
     '''Tela 7 - Perfil do aluno.'''
     return render(request,'perfil.html')
+
+def solicitar_carona(request, id):
+    '''Cria um pedido de carona (PENDENTE) para o trajeto escolhido.'''
+    carona = get_object_or_404(Trajeto, id=id)
+    if request.method == 'POST':
+        passageiro = Aluno.objects.get(email='joao@teste.com')  # TEMPORÁRIO: até existir login
+        Solicitacao.objects.get_or_create(trajeto=carona, passageiro=passageiro)
+    return redirect(reverse('detalhes-carona', args=[id]) + '#enviado')
