@@ -27,6 +27,7 @@ urlpatterns = [
     path('trajeto/', views.cadastrar_trajeto, name='cadastrar-trajeto'),
     path('caronas/', views.caronas_encontradas, name='caronas-encontradas'),
     path('carona/<int:id>/', views.detalhes_carona, name='detalhes-carona'),
+    path('carona/<int:id>/solicitar/', views.solicitar_carona, name='solicitar-carona'),
     path('minhas-caronas/', views.minhas_caronas, name='minhas-caronas'),
     path('perfil/', views.perfil, name='perfil'),
 ]
