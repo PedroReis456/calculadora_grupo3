@@ -20,7 +20,7 @@
 </div>
 <div id="confirmar" class="modal"><a class="bg" href="#"></a><div class="sheet"><i class="grab"></i><h3>Confirmar solicitação</h3><p>Você deseja solicitar esta carona?</p>
 <div class="sum"><div class="row2"><div class="avatar {{ carona.aluno.nome|slice:':2'|upper }}">{{ carona.aluno.nome|slice:':2'|upper }}</div><b>{{ carona.aluno.nome }}</b><span><i class="star">★</i> {{ nota|floatformat:1|default:"—" }}</span></div><small>📍 {{ carona.origem }} → 🎓 {{ carona.destino }}</small><small>🕐 {{ carona.horario|time:"H:i" }}</small></div>
-<div class="acts"><a class="btn ghost gray" href="#">Cancelar</a><a class="btn" href="#enviado">Confirmar</a></div></div></div>
+<div class="acts"><a class="btn ghost gray" href="#">Cancelar</a><form method="post" action="{% url 'solicitar-carona' carona.id %}" style="width:100%">{% csrf_token %}<button class="btn" type="submit">Confirmar</button></form></div></div></div>
 </div>
 
 </body>
