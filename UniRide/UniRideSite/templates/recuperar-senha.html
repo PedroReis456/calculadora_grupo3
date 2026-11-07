@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniRide — Recuperar senha</title>
+<link rel="stylesheet" href="recuperar-senha.css">
+</head>
+<body>
+<div class="app nonav">
+<div class="topbar"><a class="back" href="login.html">←</a><h1>Recuperar senha</h1></div>
+<form class="form" action="#enviado">
+
+<div class="hero"><span>🔑</span><h2>Esqueceu sua senha?</h2><p>Informe o e-mail institucional da sua conta. Vamos enviar um link para você criar uma nova senha.</p></div>
+
+<!-- Aparece só depois de enviar (o formulário leva para #enviado). No Django, troque por a mensagem da view. -->
+<div id="enviado" class="ok"><span class="tick">✓</span><div><b>Link enviado!</b><small>Se o e-mail estiver cadastrado, você receberá as instruções em instantes. Confira também a caixa de spam.</small></div></div>
+
+<label class="label" for="email">E-mail institucional</label>
+<div class="field"><span>✉️</span><input type="email" id="email" name="email" placeholder="seu.nome@puc-rio.br" autocomplete="email" required></div>
+
+<button class="btn" type="submit">Enviar link de recuperação</button>
+<a class="btn again" href="login.html">Voltar ao login</a>
+<p class="alt">Lembrou a senha? <a href="login.html">Entrar</a></p>
+</form>
+</div>
+
+</body>
+</html>
