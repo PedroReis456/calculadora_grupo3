@@ -43,6 +43,18 @@ def perfil(request):
     '''Tela 7 - Perfil do aluno.'''
     return render(request,'perfil.html')
 
+
+def editar_perfil(request):
+    '''Tela 7.1 - Editar perfil: salva nome e curso do aluno.'''
+    aluno = get_object_or_404(Aluno, email='bernardo@teste.com')  # TEMPORÁRIO: até existir login
+    if request.method == 'POST':
+        aluno.nome = request.POST['nome']
+        aluno.curso = request.POST['curso']
+        aluno.save()
+        return redirect('perfil')
+    trajeto = aluno.trajetos.first()
+    return render(request, 'editar-perfil.html', {'aluno': aluno, 'trajeto': trajeto})
+
 def solicitar_carona(request, id):
     '''Cria um pedido de carona (PENDENTE) para o trajeto escolhido.'''
     carona = get_object_or_404(Trajeto, id=id)

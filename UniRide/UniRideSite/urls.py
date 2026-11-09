@@ -30,4 +30,5 @@ urlpatterns = [
     path('carona/<int:id>/solicitar/', views.solicitar_carona, name='solicitar-carona'),
     path('minhas-caronas/', views.minhas_caronas, name='minhas-caronas'),
     path('perfil/', views.perfil, name='perfil'),
+    path('perfil/editar/', views.editar_perfil, name='editar-perfil'),
 ]
