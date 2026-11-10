@@ -67,3 +67,7 @@ def termos(request):
     '''Termos de Uso. Página pública: não colocar @login_required (o cadastro aponta para ela).'''
     return render(request, 'termos.html')
 
+def recuperar_senha(request):
+    '''Recuperar senha. Página pública: não colocar @login_required.'''
+    return render(request, 'recuperar-senha.html')
+
