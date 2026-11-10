@@ -62,3 +62,8 @@ def solicitar_carona(request, id):
         passageiro = Aluno.objects.get(email='joao@teste.com')  # TEMPORÁRIO: até existir login
         Solicitacao.objects.get_or_create(trajeto=carona, passageiro=passageiro)
     return redirect(reverse('detalhes-carona', args=[id]) + '#enviado')
+
+def termos(request):
+    '''Termos de Uso. Página pública: não colocar @login_required (o cadastro aponta para ela).'''
+    return render(request, 'termos.html')
+
