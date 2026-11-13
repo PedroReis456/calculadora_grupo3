@@ -4,14 +4,26 @@ import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'UniRideSite.settings')
 django.setup()
 
+from django.contrib.auth.models import User
 from UniRideSite.models import Aluno, Veiculo, Trajeto, Solicitacao, Avaliacao
+
+# Senha de todos os usuarios de teste (para logar no site)
+SENHA_TESTE = 'uniride123'
 
 Avaliacao.objects.all().delete()
 Solicitacao.objects.all().delete()
 Trajeto.objects.all().delete()
 Veiculo.objects.all().delete()
 Aluno.objects.all().delete()
+# Apaga so os usuarios de teste (e-mail @teste.com); o superusuario do admin fica
+User.objects.filter(username__endswith='@teste.com').delete()
 print('Tabelas limpas.')
+
+
+def criar_aluno(nome, email, matricula, curso):
+    '''Cria o usuario de login (username = e-mail) e o aluno ligado a ele.'''
+    user = User.objects.create_user(username=email, email=email, password=SENHA_TESTE)
+    return Aluno.objects.create(user=user, nome=nome, email=email, matricula=matricula, curso=curso)
 
 print('Alunos no banco:', Aluno.objects.count())
 print('Veiculos no banco:', Veiculo.objects.count())
@@ -20,12 +32,12 @@ print('Solicitacoes no banco:', Solicitacao.objects.count())
 print('Avaliacoes no banco:', Avaliacao.objects.count())
 
 
-bernardo = Aluno.objects.create(nome='Bernardo', email='bernardo@teste.com', matricula='2310001', curso='Engenharia de Producao')
-ana = Aluno.objects.create(nome='Ana', email='ana@teste.com', matricula='2310002', curso='Engenharia Civil')
-lucas = Aluno.objects.create(nome='Lucas', email='lucas@teste.com', matricula='2310003', curso='Administracao')
-mariana = Aluno.objects.create(nome='Mariana', email='mariana@teste.com', matricula='2310004', curso='Direito')
-joao = Aluno.objects.create(nome='Joao', email='joao@teste.com', matricula='2310005', curso='Engenharia de Producao')
-sofia = Aluno.objects.create(nome='Sofia', email='sofia@teste.com', matricula='2310006', curso='Psicologia')
+bernardo = criar_aluno(nome='Bernardo', email='bernardo@teste.com', matricula='2310001', curso='Engenharia de Producao')
+ana = criar_aluno(nome='Ana', email='ana@teste.com', matricula='2310002', curso='Engenharia Civil')
+lucas = criar_aluno(nome='Lucas', email='lucas@teste.com', matricula='2310003', curso='Administracao')
+mariana = criar_aluno(nome='Mariana', email='mariana@teste.com', matricula='2310004', curso='Direito')
+joao = criar_aluno(nome='Joao', email='joao@teste.com', matricula='2310005', curso='Engenharia de Producao')
+sofia = criar_aluno(nome='Sofia', email='sofia@teste.com', matricula='2310006', curso='Psicologia')
 print('Alunos criados.')
 
 #criar os veiculos (so quem oferece carona tem carro)
