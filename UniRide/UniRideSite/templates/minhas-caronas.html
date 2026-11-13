@@ -11,8 +11,23 @@
 <div class="app">
 <div class="topbar"><h1 style="font-size:20px">Minhas caronas</h1></div>
 <div class="wrap"><p class="label">Caronas ativas</p>
+{% for s in caronas_aceitas %}{% with t=s.trajeto %}
 <article class="card active"><p class="on"><i class="dot"></i> Carona ativa</p>
-<div class="who"><div class="avatar AN">AN</div><div class="info"><b>Ana</b><p>Botafogo → PUC-Rio</p><div><span class="chip">Seg</span><span class="chip">Qua</span><span class="chip">Sex</span><small>· 07:20</small></div></div><a class="det" href="{% url 'detalhes-carona' 1 %}">Detalhes</a></div></article>
+<div class="who"><div class="avatar {{ t.aluno.nome|slice:':2'|upper }}">{{ t.aluno.nome|slice:':2'|upper }}</div><div class="info"><b>{{ t.aluno.nome }}</b><p>{{ t.origem }} → {{ t.destino }}</p><div>{% include 'partials/dias.html' %}<small>· {{ t.horario|time:"H:i" }}</small></div></div><a class="det" href="{% url 'detalhes-carona' t.id %}">Detalhes</a></div></article>
+{% endwith %}{% endfor %}
+
+{% if pedidos_pendentes %}<p class="label">Aguardando resposta</p>{% endif %}
+{% for s in pedidos_pendentes %}{% with t=s.trajeto %}
+<article class="card"><p class="status wait">⏳ Aguardando resposta do motorista</p>
+<div class="who"><div class="avatar {{ t.aluno.nome|slice:':2'|upper }}">{{ t.aluno.nome|slice:':2'|upper }}</div><div class="info"><b>{{ t.aluno.nome }}</b><p>{{ t.origem }} → {{ t.destino }}</p><div>{% include 'partials/dias.html' %}<small>· {{ t.horario|time:"H:i" }}</small></div></div><a class="det" href="{% url 'detalhes-carona' t.id %}">Detalhes</a></div></article>
+{% endwith %}{% endfor %}
+
+{% if pedidos_recusados %}<p class="label">Pedidos recusados</p>{% endif %}
+{% for s in pedidos_recusados %}{% with t=s.trajeto %}
+<article class="card refused"><p class="status no">Pedido recusado</p>
+<div class="who"><div class="avatar {{ t.aluno.nome|slice:':2'|upper }}">{{ t.aluno.nome|slice:':2'|upper }}</div><div class="info"><b>{{ t.aluno.nome }}</b><p>{{ t.origem }} → {{ t.destino }}</p><div>{% include 'partials/dias.html' %}<small>· {{ t.horario|time:"H:i" }}</small></div></div></div></article>
+{% endwith %}{% endfor %}
+
 <p class="label">Solicitações recebidas</p>
 <div class="card req"><span id="a1"></span><span id="r1"></span>
 <div class="who"><div class="avatar JO">JO</div><div><b>João <small><i class="star">★</i> 4,6</small></b><p>João quer entrar na sua carona.</p></div></div>
