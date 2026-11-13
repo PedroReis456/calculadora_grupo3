@@ -36,13 +36,13 @@ def detalhes_carona(request, id):
 
 def minhas_caronas(request):
     '''Tela 6 - Caronas do aluno (ativas e solicitações).'''
-    return render(request, 'minhas-caronas.html')
+    aluno = aluno_temporario(request)
+    return render(request, 'minhas-caronas.html', {'aluno': aluno})
 
 
 def perfil(request):
     '''Tela 7 - Perfil do aluno.'''
     return render(request,'perfil.html')
-
 
 def editar_perfil(request):
     '''Tela 7.1 - Editar perfil: salva nome e curso do aluno.'''
@@ -70,4 +70,11 @@ def termos(request):
 def recuperar_senha(request):
     '''Recuperar senha. Página pública: não colocar @login_required.'''
     return render(request, 'recuperar-senha.html')
+
+def aluno_temporario(request):
+    '''TEMPORÁRIO: até existir login.
+    Escolhe o aluno pela URL (?aluno=email). Sem parâmetro, usa o Bernardo.
+    Quando o login existir, trocar o corpo por: return request.user.aluno'''
+    email = request.GET.get('aluno', 'bernardo@teste.com')
+    return get_object_or_404(Aluno, email=email)
 
