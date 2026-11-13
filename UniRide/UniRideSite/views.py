@@ -68,6 +68,14 @@ def minhas_caronas(request):
         'pedidos_recusados': pedidos.filter(status=Solicitacao.RECUSADA),
     }
 
+        # Se o aluno oferece carona, busca os pedidos recebidos no trajeto dele
+    trajeto_motorista = aluno.trajetos.filter(tipo=Trajeto.OFERECE, ativo=True).first()
+    if trajeto_motorista:
+        recebidos = trajeto_motorista.solicitacoes.select_related('passageiro')
+        contexto['trajeto_motorista'] = trajeto_motorista
+        contexto['pedidos_recebidos'] = recebidos.filter(status=Solicitacao.PENDENTE)
+        contexto['passageiros_confirmados'] = recebidos.filter(status=Solicitacao.ACEITA)
+   
     return render(request, 'minhas-caronas.html', contexto)
 
 
