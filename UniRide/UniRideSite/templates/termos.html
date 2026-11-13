@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UniRide — Termos de uso</title>
-<link rel="stylesheet" href="termos.css">
+<link rel="stylesheet" href="{% static 'css/termos.css' %}">
 </head>
 <body>
 <div class="app nonav">
-<div class="topbar"><a class="back" href="criar-conta.html">←</a><h1>Termos de uso</h1></div>
+<div class="topbar"><a class="back" href="{% url 'login' %}">←</a><h1>Termos de uso</h1></div>
 <div class="page">
 <p class="lead">Leia com atenção antes de criar sua conta no UniRide.</p>
 
@@ -123,7 +124,7 @@
 <p>Estes Termos são regidos pelas leis brasileiras.</p>
 </section>
 
-<a class="btn" href="criar-conta.html">Voltar ao cadastro</a>
+<a class="btn" href="{% url 'login' %}">Voltar</a>
 </div>
 </div>
 

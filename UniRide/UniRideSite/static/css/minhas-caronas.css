@@ -16,7 +16,7 @@ body{font-family:'Outfit',sans-serif;background:#E5E7EB;color:var(--g700)}
 .btn:active{transform:scale(.97)}
 .btn.ghost{background:#fff;color:var(--blue);border:1px solid var(--blue-l);box-shadow:none;padding:14px}
 .btn.gray{color:var(--g500);border-color:var(--g100)}
-.avatar{border-radius:16px;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.avatar{background:var(--blue);border-radius:16px;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .AN{background:#3B82F6}.LU{background:#1D4ED8}.MA{background:#60A5FA}.BS{background:var(--blue)}.JO{background:#60A5FA}.SO{background:var(--yellow);color:#1E3A8A}
 .star{color:var(--yellow)}
 .chip{font-size:10px;font-weight:600;background:var(--g100);color:var(--g500);padding:2px 6px;border-radius:6px}
@@ -44,10 +44,21 @@ body{font-family:'Outfit',sans-serif;background:#E5E7EB;color:var(--g700)}
 .req .who{margin-bottom:12px;align-items:flex-start}.req p{font-size:12px;color:var(--g500);margin-top:2px}
 .req small{font-size:12px;color:var(--g500);font-weight:700;margin-left:6px}
 .acts{display:flex;gap:8px}.acts .btn{padding:10px;font-size:14px;border-radius:12px;box-shadow:none}
-.match,.nope{display:none}
-.match{background:#FEFCE8;border-radius:12px;padding:8px 12px;font-size:14px;font-weight:700;color:#A16207}
-.nope{font-size:12px;color:var(--g400)}
-#a1:target~.acts,#a2:target~.acts,#r1:target~.acts,#r2:target~.acts{display:none}
-#a1:target~.match,#a2:target~.match,#r1:target~.nope,#r2:target~.nope{display:block}
-.req:has(span[id^=a]:target){border-left:4px solid var(--yellow)}
-.req:has(span[id^=r]:target){opacity:.5}
+/* Pedidos do passageiro (pendentes e recusados) */
+.status{font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.status.wait{color:#A16207}
+.status.no{color:var(--g400)}
+.refused{opacity:.6}
+.info{min-width:0}
+.info div{flex-wrap:wrap}
+.det{flex-shrink:0}
+/* Motorista: pedidos recebidos e passageiros confirmados (B6) */
+.acts form{flex:1}
+.req .sub{font-size:11px;color:var(--g400)}
+.ok{border-left:4px solid #4ADE80}
+.msg{border-radius:12px;padding:10px 14px;font-size:14px;font-weight:600}
+.msg.success{background:#F0FDF4;color:#166534}
+.msg.error{background:#FEF2F2;color:#991B1B}
+/* Listas vazias (B7) */
+.empty{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px dashed var(--g200);background:transparent}
+.empty p{font-size:13px;color:var(--g500)}

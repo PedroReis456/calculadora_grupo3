@@ -117,6 +117,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+# Para onde o @login_required manda quem não está logado
+LOGIN_URL = "login"
+
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration

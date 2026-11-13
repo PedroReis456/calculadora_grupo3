@@ -23,6 +23,7 @@ from UniRideSite import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login, name='login'),
+    path('sair/', views.sair, name='sair'),
     path('inicio/', views.home, name='home'),
     path('trajeto/', views.cadastrar_trajeto, name='cadastrar-trajeto'),
     path('caronas/', views.caronas_encontradas, name='caronas-encontradas'),
@@ -30,4 +31,8 @@ urlpatterns = [
     path('carona/<int:id>/solicitar/', views.solicitar_carona, name='solicitar-carona'),
     path('minhas-caronas/', views.minhas_caronas, name='minhas-caronas'),
     path('perfil/', views.perfil, name='perfil'),
+    path('perfil/editar/', views.editar_perfil, name='editar-perfil'),
+    path('termos/', views.termos, name='termos'),
+    path('recuperar-senha/', views.recuperar_senha, name='recuperar-senha'),
+        path('solicitacao/<int:id>/responder/', views.responder_solicitacao, name='responder-solicitacao'),
 ]
