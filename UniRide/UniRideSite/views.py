@@ -2,7 +2,8 @@ from django.db.models import Avg
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from UniRideSite.models import Aluno, Avaliacao, Solicitacao, Trajeto
-
+from datetime import datetime
+from django.contrib import messages
 
 def login(request):
     '''Tela 1 - Login / Cadastro.'''
@@ -15,15 +16,37 @@ def home(request):
 
 
 def cadastrar_trajeto(request):
-    '''Tela 3 - Cadastrar ou editar o trajeto.'''
+    '''Tela 3 - Cadastrar um trajeto.'''
+    if request.method == 'POST':
+        aluno = Aluno.objects.get(email='joao@teste.com')
+        dias = request.POST.getlist('dias')
+        Trajeto.objects.create(
+            aluno=aluno,
+            tipo=request.POST.get('tipo'),
+            origem=request.POST.get('origem'),
+            destino=request.POST.get('destino'),
+            horario=request.POST.get('horario'),
+            vagas=int(request.POST.get('vagas', 0)),
+            dom='dom' in dias,
+            seg='seg' in dias,
+            ter='ter' in dias,
+            qua='qua' in dias,
+            qui='qui' in dias,
+            sex='sex' in dias,
+            sab='sab' in dias
+        )
+        return redirect('home')
     return render(request, 'cadastrar-trajeto.html')
 
-
 def caronas_encontradas(request):
-    '''Tela 4 - Lista de caronas compatíveis com o trajeto.'''
-    caronas = Trajeto.objects.filter(tipo=Trajeto.OFERECE, ativo=True).annotate(
-        nota=Avg('aluno__avaliacoes_recebidas__estrelas')
-    )
+    '''Tela 4 - Busca de caronas.'''
+    caronas = Trajeto.objects.filter(tipo=Trajeto.OFERECE, ativo=True)
+    if request.GET.get('origem'):
+        caronas = caronas.filter(origem__icontains=request.GET.get('origem'))
+    if request.GET.get('horario'):
+        caronas = caronas.filter(horario=request.GET.get('horario'))
+    if request.GET.get('dia'):
+        caronas = caronas.filter(**{request.GET.get('dia'): True})
     return render(request, 'caronas-encontradas.html', {'caronas': caronas})
 
 def detalhes_carona(request, id):
@@ -50,3 +73,4 @@ def solicitar_carona(request, id):
         passageiro = Aluno.objects.get(email='joao@teste.com')  # TEMPORÁRIO: até existir login
         Solicitacao.objects.get_or_create(trajeto=carona, passageiro=passageiro)
     return redirect(reverse('detalhes-carona', args=[id]) + '#enviado')
+
