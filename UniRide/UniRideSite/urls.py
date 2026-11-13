@@ -34,4 +34,5 @@ urlpatterns = [
     path('perfil/editar/', views.editar_perfil, name='editar-perfil'),
     path('termos/', views.termos, name='termos'),
     path('recuperar-senha/', views.recuperar_senha, name='recuperar-senha'),
+        path('solicitacao/<int:id>/responder/', views.responder_solicitacao, name='responder-solicitacao'),
 ]

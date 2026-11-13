@@ -4,7 +4,8 @@ from django.db.models import Avg
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from UniRideSite.models import Aluno, Avaliacao, Solicitacao, Trajeto
-
+from django.contrib import messages
+from django.views.decorators.http import require_POST
 
 def login(request):
     '''Tela 1 - Login: confere e-mail e senha e abre a sessão do aluno.'''
@@ -117,3 +118,38 @@ def aluno_temporario(request):
     '''Devolve o aluno logado (ligado ao usuário do Django).'''
     return request.user.aluno
 
+@login_required
+@require_POST
+def responder_solicitacao(request, id):
+    '''O motorista aceita ou recusa um pedido de carona (B5).'''
+    solicitacao = get_object_or_404(Solicitacao, id=id)
+    trajeto = solicitacao.trajeto
+    aluno = aluno_temporario(request)
+    acao = request.POST.get('acao')
+
+    # Só o dono do trajeto pode responder
+    if trajeto.aluno != aluno:
+        messages.error(request, 'Você só pode responder pedidos da sua própria carona.')
+        return redirect('minhas-caronas')
+
+    # Só pedidos que ainda estão esperando resposta
+    if solicitacao.status != Solicitacao.PENDENTE:
+        messages.error(request, 'Este pedido já foi respondido.')
+        return redirect('minhas-caronas')
+
+    if acao == 'aceitar':
+        aceitas = trajeto.solicitacoes.filter(status=Solicitacao.ACEITA).count()
+        if aceitas >= trajeto.vagas:
+            messages.error(request, 'Sua carona não tem mais vagas.')
+            return redirect('minhas-caronas')
+        solicitacao.status = Solicitacao.ACEITA
+        solicitacao.save()
+        messages.success(request, f'{solicitacao.passageiro.nome} entrou na sua carona!')
+    elif acao == 'recusar':
+        solicitacao.status = Solicitacao.RECUSADA
+        solicitacao.save()
+        messages.success(request, f'Pedido de {solicitacao.passageiro.nome} recusado.')
+    else:
+        messages.error(request, 'Ação inválida.')
+
+    return redirect('minhas-caronas')
