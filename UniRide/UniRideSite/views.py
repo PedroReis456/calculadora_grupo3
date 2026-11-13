@@ -37,7 +37,18 @@ def detalhes_carona(request, id):
 def minhas_caronas(request):
     '''Tela 6 - Caronas do aluno (ativas e solicitações).'''
     aluno = aluno_temporario(request)
-    return render(request, 'minhas-caronas.html', {'aluno': aluno})
+
+    # Pedidos que o aluno fez como passageiro (já traz o motorista junto)
+    pedidos = aluno.solicitacoes.select_related('trajeto__aluno')
+
+    contexto = {
+        'aluno': aluno,
+        'caronas_aceitas': pedidos.filter(status=Solicitacao.ACEITA),
+        'pedidos_pendentes': pedidos.filter(status=Solicitacao.PENDENTE),
+        'pedidos_recusados': pedidos.filter(status=Solicitacao.RECUSADA),
+    }
+
+    return render(request, 'minhas-caronas.html', contexto)
 
 
 def perfil(request):
