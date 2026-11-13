@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Cada classe abaixo vira uma TABELA no banco de dados.
@@ -12,6 +13,15 @@ class Aluno(models.Model):
     quem pede carona atua como passageiro.
     '''
     id = models.AutoField(primary_key=True)
+    # Conta de login ligada ao aluno (nas views: request.user.aluno)
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        related_name='aluno',
+        null=True,
+        blank=True,
+        help_text='Usuário de login do Django ligado a este aluno',
+    )
     nome = models.CharField(max_length=100, help_text='Entre o nome completo')
     email = models.EmailField(max_length=254, unique=True, help_text='E-mail institucional (@puc-rio.br)')
     matricula = models.CharField(max_length=10, unique=True, help_text='Número de matrícula na PUC-Rio')
